@@ -57,28 +57,47 @@ function displayTemperature(response) {
       class="weather-app-temperature-icon"
     />`;
 }
+let getForecast = function (city) {
+  let apiKey = "eafo3c54a06d9f77ba3t96121805c98f";
+  let apiUrlforecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrlforecast).then(displayForecast);
+};
 
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+
+function displayForecast(response) {
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    // Loop through each day
-    forecastHtml += `
+  response.data.daily.forEach(function (day, index) {
+    getForecast(response.data.cityInput);
+    if (index < 5) {
+      forecastHtml += `
    
     <div class="weather-forecast-item">
-        <div class="weather-forecast-day">${day}</div>
-        <div class="weather-forecast-icon">🌦️</div>
+        <div class="weather-forecast-day">${formatDate(day.time)}</div>
+        <div>
+        <img src="${day.condition.icon_url}" class="weather-forecast-icon"/>
+        </div>
         <div class="weather-forecast-degree">
-            <div class="weather-forecast-max-degree"><strong>15°C</strong></div>
-            <div class="weather-forecast-min-degree">9°C</div>
+            <div class="weather-forecast-max-degree"><strong>${Math.round(
+              day.temperature.maximum
+            )}°C</strong></div>
+            <div class="weather-forecast-min-degree">${Math.round(
+              day.temperature.minimum
+            )}°C</div>
         </div>
    `;
+    }
   });
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = forecastHtml;
 }
-displayForecast();
+fetchWeather("Sydney");
+getForecast("Sydney");
 //deep peel should be avoided
 //www.blackdermdirectory
 //superficial

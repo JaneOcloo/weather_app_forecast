@@ -92,13 +92,14 @@ footer {
 }
 .weather-forecast-items {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 .weather-forecast-day {
   color: rgba(243, 243, 243, 0.89);
   font-size: 16px;
   padding: 5px;
+  text-align: center;
 }
 
 .weather-forecast-icon {
