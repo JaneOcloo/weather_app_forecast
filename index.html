@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"> <title>Weatherly</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+</head>
+  <body>
+    <div class="weather-box">
+  <header>
+    <form class="form-style" id="forma">
+      <input class="search-input" type="search"placeholder="Enter a city" id="input-a-city" required/>
+      <input class="submit-button" type="submit" value="Search" />
+    </form>
+  </header>
+  <main>
+    <div class="block-info">
+    <div><h1 class="weather-city" id="headerCity">Sydney</h1>
+    <p class="weather-app-details">
+      <span id="my-date">Friday 14:02, </span> <span id="weather-condition">scattered clouds</span>
+      <br />
+      Humidity:<strong id="humidity">69%</strong>, Wind: <strong id="wind-speed">16 km/h</strong>
+      </div> </p>
+      <div class="weather-app-temperature" id="weather-temperature">
+        <span id="icon">
+          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png" class="weather-app-temperature-icon"/>
+          
+        </span>
+          <span class="weather-app-temperature-value">18</span><span class="weather-app-temperature-degree">°C</span></div>
+      </div>
+   <div class="weather-forecast" id="forecast"></div>
+      </main>
+  <footer>
+    This project was coded by
+    <a href="https://github.com/JaneOcloo/weather-app" target="_blank"
+      >Jane Ocloo</a
+    >
+    and
+    <a href="https://github.com/JaneOcloo/weather-app" target="_blank"
+      >open-sourced on GitHub</a
+    >
+    and <a href="https://www.netlify.com/" target="_blank">hosted on Netlify</a>
+  </div>
+</footer>
+<script src="index.js"></script>
+  </body>
+</html>
