@@ -59,9 +59,8 @@ function displayTemperature(response) {
 }
 
 function displayForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"]; // Array of days
-
-  let forecastHtml = ""; // Create an empty string to store HTML content
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
 
   days.forEach(function (day) {
     // Loop through each day
@@ -77,7 +76,7 @@ function displayForecast() {
    `;
   });
   let forecast = document.querySelector("#forecast");
-  forecast.innerHTML = forecastHtml; // Update the forecast container with the generated HTML
+  forecast.innerHTML = forecastHtml;
 }
 displayForecast();
 //deep peel should be avoided

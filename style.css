@@ -64,8 +64,7 @@ footer {
   color: brown;
 }
 .weather-app-temperature {
-  display: flex; /* Arrange items in a row */
-  /* Align vertically */
+  display: flex;
 }
 
 .weather-app-temperature-value {
